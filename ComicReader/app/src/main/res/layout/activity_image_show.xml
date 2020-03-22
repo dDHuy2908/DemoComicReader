@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+
+    <data>
+
+        <variable
+            name="listener"
+            type="com.ddhuy.comicreader.listener.ImageShowNaviListener" />
+    </data>
+
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <androidx.viewpager.widget.ViewPager
+            android:id="@+id/view_pager"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_above="@id/chapter_navi" />
+
+        <RelativeLayout
+            android:id="@+id/chapter_navi"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:background="@color/colorPrimary"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/chapter_pre"
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:drawableLeft="@drawable/ic_back"
+                android:drawablePadding="8dp"
+                android:gravity="center_vertical"
+                android:onClick="@{v -> listener.onPreClickedListener()}"
+                android:paddingLeft="8dp"
+                android:text="Pre chap"
+                android:textColor="@color/white"
+                android:textSize="16sp" />
+
+            <TextView
+                android:id="@+id/chapter_next"
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:layout_alignParentRight="true"
+                android:drawableRight="@drawable/ic_next"
+                android:drawablePadding="8dp"
+                android:gravity="center_vertical"
+                android:onClick="@{v -> listener.onNextClickedListener()}"
+                android:paddingRight="8dp"
+                android:text="Next chap"
+                android:textColor="@color/white"
+                android:textSize="16sp" />
+
+        </RelativeLayout>
+
+    </RelativeLayout>
+</layout>
